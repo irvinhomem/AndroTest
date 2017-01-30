@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroTest</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="edit_message">Écrire un message &#8230;</string>
+    <string name="button_send">Envoyer</string>
+</resources>

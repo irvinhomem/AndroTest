@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AndroTest</string>
+    <string name="action_settings">Inställningar</string>
+    <string name="edit_message">Skriv et meddelande &#8230;</string>
+    <string name="button_send">Skicka</string>
+</resources>
