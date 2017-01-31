@@ -29,10 +29,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        // Snackbar is the small horizonal bar that pops-in at the bottom (like a toast but from the bottom)
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Snackbar is the small horizonal bar that pops-in at the bottom (like a toast but from the bottom)
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
