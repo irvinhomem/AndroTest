@@ -4,4 +4,7 @@
     <string name="action_settings">Inställningar</string>
     <string name="edit_message">Skriv et meddelande &#8230;</string>
     <string name="button_send">Skicka</string>
+    <string name="action_favorite">Gillar</string>
+    <string name="action_about">Om</string>
+    <string name="title_activity_child">AndroTest Barn aktivitet</string>
 </resources>

@@ -4,4 +4,7 @@
     <string name="action_settings">Ajustes</string>
     <string name="edit_message">Escribe un mensaje &#8230;</string>
     <string name="button_send">Enviar</string>
+    <string name="action_favorite">Me Gusta</string>
+    <string name="action_about">Sobre</string>
+    <string name="title_activity_child">AndroTest Actividad infantil</string>
 </resources>
