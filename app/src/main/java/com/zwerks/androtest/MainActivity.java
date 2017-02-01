@@ -103,4 +103,14 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+    /** Called when the user clicks the "Send" button */
+    public void openLinearLayout(View view){
+        //Do something in response to button click
+        Intent intent = new Intent(this, LinearLayoutActivity.class);
+        //EditText editText = (EditText) findViewById(R.id.edit_message);
+        //String message = editText.getText().toString();
+        //intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
 }
