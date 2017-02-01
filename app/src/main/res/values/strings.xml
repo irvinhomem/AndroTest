@@ -6,4 +6,10 @@
     <string name="edit_message">Enter a message &#8230;</string>
     <string name="button_send">Send</string>
     <string name="title_activity_child">AndroTest Child Activity</string>
+
+    <!--Linear Layout Strings -->
+    <string name="to">To</string>
+    <string name="subject">Subject</string>
+    <string name="message">Message</string>
+    <string name="send">Send</string>
 </resources>
