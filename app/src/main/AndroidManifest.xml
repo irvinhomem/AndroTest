@@ -23,10 +23,11 @@
             </intent-filter>
         </activity>
 
-        <!-- A child of the main activity -->
+        <!-- A child of the main activity --> <!-- The "NoActionBar" theme is important to get the "Appcompat ActionBar" in place-->
         <activity
             android:name=".DisplayMessageActivity"
             android:label="@string/title_activity_child"
+            android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
