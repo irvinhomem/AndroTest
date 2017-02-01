@@ -25,7 +25,8 @@ public class DisplayMessageActivity extends AppCompatActivity {
         ActionBar ab = getSupportActionBar();
 
         // Enable the Up button
-        ab.setDisplayHomeAsUpEnabled(true);
+        ab.setDisplayHomeAsUpEnabled(true);   /*Shows the back arrow and the icon if configured*/
+        //ab.setDisplayShowHomeEnabled(true); /*setDisplayShowHomeEnabled shows the icon if configured, tho' use of this is not encouraged*/
         /**/
 
         //Get the intent that started the activity, and retrieve the string "extra"
