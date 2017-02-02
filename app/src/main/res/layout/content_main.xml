@@ -38,7 +38,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_below="@id/layout_send_message"
         android:background="@android:color/holo_green_light">
         <Button
@@ -46,6 +46,11 @@
             android:layout_height="wrap_content"
             android:text="@string/btn_OpenLinearLayout"
             android:onClick="openLinearLayout"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_OpenRelativeLayout"
+            android:onClick="openRelativeLayout"/>
     </LinearLayout>
 
 

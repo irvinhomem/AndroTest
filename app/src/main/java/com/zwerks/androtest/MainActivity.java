@@ -104,10 +104,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /** Called when the user clicks the "Send" button */
+    /** Called when the user clicks the "LinearLayout button */
     public void openLinearLayout(View view){
         //Do something in response to button click
         Intent intent = new Intent(this, LinearLayoutActivity.class);
+        //EditText editText = (EditText) findViewById(R.id.edit_message);
+        //String message = editText.getText().toString();
+        //intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
+    /** Called when the user clicks the "RelativeLayout button */
+    public void openRelativeLayout(View view){
+        //Do something in response to button click
+        Intent intent = new Intent(this, RelativeLayoutActivity.class);
         //EditText editText = (EditText) findViewById(R.id.edit_message);
         //String message = editText.getText().toString();
         //intent.putExtra(EXTRA_MESSAGE, message);

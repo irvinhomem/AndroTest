@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_relative_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@android:color/holo_orange_light"
+    tools:context="com.zwerks.androtest.RelativeLayoutActivity">
+
+</RelativeLayout>
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@android:color/holo_orange_light">
+    <EditText
+        android:id="@+id/reminder_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder_txt" />
+    <Spinner
+        android:id="@+id/spinner_date"
+        android:tag="spinner_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminder_name"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/spinner_time" />
+    <Spinner
+        android:id="@+id/spinner_time"
+        android:tag="spinner_time"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/reminder_name"
+        android:layout_alignParentRight="true"
+        />
+    <!-- android:onClick="showTimePickerDialog"-->
+    <Button
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner_time"
+        android:layout_alignParentRight="true"
+        android:text="@string/done_btn" />
+</RelativeLayout>

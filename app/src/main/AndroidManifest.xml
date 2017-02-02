@@ -37,7 +37,8 @@
                 android:value=".MainActivity" /> <!-- or may be fully qualified name is needed ? -->
 
         </activity>
-        <activity android:name=".LinearLayoutActivity"></activity>
+        <activity android:name=".LinearLayoutActivity" />
+        <activity android:name=".RelativeLayoutActivity"></activity>
     </application>
 
 </manifest>
