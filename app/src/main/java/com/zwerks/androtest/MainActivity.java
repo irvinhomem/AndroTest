@@ -11,6 +11,8 @@ import android.view.MenuItem;
 
 import android.content.Intent;
 import android.widget.EditText;
+import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.zwerks.androtest.MESSAGE";
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
 
         // Set the "activity_main.xml" layout as the current View
         setContentView(R.layout.activity_main);
@@ -123,4 +126,10 @@ public class MainActivity extends AppCompatActivity {
         //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
+
+    /* Called when user clioks the "Force Crash" button*/
+    public void forceCrash(View view) {
+        throw new RuntimeException("This is a crash");
+    }
+
 }

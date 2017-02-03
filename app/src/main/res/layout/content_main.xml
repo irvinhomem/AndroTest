@@ -35,23 +35,34 @@
             android:text="@string/button_send"
             android:onClick="sendMessage"/>
     </LinearLayout>
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/buttons_panel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal"
         android:layout_below="@id/layout_send_message"
         android:background="@android:color/holo_green_light">
         <Button
+            android:id="@+id/btn_LinearLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_OpenLinearLayout"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:onClick="openLinearLayout"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_OpenRelativeLayout"
+            android:layout_toRightOf="@id/btn_LinearLayout"
             android:onClick="openRelativeLayout"/>
-    </LinearLayout>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Force Crash!"
+            android:onClick="forceCrash"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 
 
 

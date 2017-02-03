@@ -16,7 +16,16 @@ public class RelativeLayoutActivity extends AppCompatActivity {
     //private String PKG_NAME = "";
     //private String CLASS_NAME = "";
     /*LOGGING TAG WORKS*/
-    public String LOG_TAG = RelativeLayoutActivity.class.getSimpleName()+":MyLogs:";
+    public static final String LOG_TAG = "[MY_LOGS]"+ RelativeLayoutActivity.class.getSimpleName();
+    /*** Logging tag used for common UI lifecycle events*/
+    public static final String LOG_UI = "UI";
+    /*** Logging tag used for any kind of network I/O communication */
+    public static final String LOG_NET = "NET";
+    /*** Logging tag used for storage; local files, preferences and databases */
+    public static final String LOG_DATA = "DATA";
+    /*** Logging tag used for business logic and app related things not already covered by the other log tags  */
+    public static final String LOG_APP = "APP";
+
     /*
     public interface Constants {
         //String LOG_TAG = this.PKG_NAME + ":" + this.CLASS_NAME; //"com.zwerks.androtest.RelativeLayoutActivity";
@@ -39,7 +48,7 @@ public class RelativeLayoutActivity extends AppCompatActivity {
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     if(BuildConfig.DEBUG) {
-                        Log.i(LOG_TAG, v.getTag().toString()); //Can't get v.getId() into a String for logging so using v.getTag
+                        Log.d(LOG_UI+LOG_TAG, v.getTag().toString()); //Can't get v.getId() into a String for logging so using v.getTag
                     }
 
                     if (v.getId() == R.id.spinner_date) {

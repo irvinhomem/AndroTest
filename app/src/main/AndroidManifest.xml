@@ -39,6 +39,10 @@
         </activity>
         <activity android:name=".LinearLayoutActivity" />
         <activity android:name=".RelativeLayoutActivity"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="31dd54ea95186fbb46b68e0a9a4ccb89dd5acb71" />
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>
