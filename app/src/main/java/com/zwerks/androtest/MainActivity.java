@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +17,16 @@ import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
     public final static String EXTRA_MESSAGE = "com.zwerks.androtest.MESSAGE";
+    /** Logging stuff */
+    public static final String LOG_TAG = "[MY_LOGS]"+ MainActivity.class.getSimpleName();
+    /*** Logging tag used for common UI lifecycle events*/
+    public static final String LOG_UI = "UI";
+    /*** Logging tag used for any kind of network I/O communication */
+    public static final String LOG_NET = "NET";
+    /*** Logging tag used for storage; local files, preferences and databases */
+    public static final String LOG_DATA = "DATA";
+    /*** Logging tag used for business logic and app related things not already covered by the other log tags  */
+    public static final String LOG_APP = "APP";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,6 +126,12 @@ public class MainActivity extends AppCompatActivity {
         //String message = editText.getText().toString();
         //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
+        if(BuildConfig.DEBUG) {
+            //Testing inbuilt logging
+            Log.d(LOG_UI + LOG_TAG, "Opening Linear Layout");
+            //Testing Crashlytics logging
+            Crashlytics.log(Log.DEBUG, LOG_UI + LOG_TAG, "Opening Linear Layout");
+        }
     }
 
     /** Called when the user clicks the "RelativeLayout button */
@@ -125,11 +142,19 @@ public class MainActivity extends AppCompatActivity {
         //String message = editText.getText().toString();
         //intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
+        if(BuildConfig.DEBUG) {
+            //Testing inbuilt logging
+            Log.d(LOG_UI + LOG_TAG, "Opening Relative Layout");
+            //Testing Crashlytics logging
+            Crashlytics.log(Log.DEBUG, LOG_UI + LOG_TAG, "Opening Relative Layout");
+        }
     }
 
     /* Called when user clioks the "Force Crash" button*/
     public void forceCrash(View view) {
+        //Crashlytics.log(Log.ERROR, "MY_LOG", "This is a crash");
         throw new RuntimeException("This is a crash");
+
     }
 
 }

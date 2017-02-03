@@ -12,6 +12,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Spinner;
 
+import com.crashlytics.android.Crashlytics;
+
 public class RelativeLayoutActivity extends AppCompatActivity {
     //private String PKG_NAME = "";
     //private String CLASS_NAME = "";
@@ -49,6 +51,7 @@ public class RelativeLayoutActivity extends AppCompatActivity {
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     if(BuildConfig.DEBUG) {
                         Log.d(LOG_UI+LOG_TAG, v.getTag().toString()); //Can't get v.getId() into a String for logging so using v.getTag
+                        Crashlytics.log(Log.DEBUG,LOG_UI+LOG_TAG, v.getTag().toString());
                     }
 
                     if (v.getId() == R.id.spinner_date) {
