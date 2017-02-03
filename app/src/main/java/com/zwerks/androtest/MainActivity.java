@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.EditText;
 import com.crashlytics.android.Crashlytics;
+import com.crashlytics.android.core.CrashlyticsCore;
+
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,7 +33,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics());
+        /** Have Crashlytics run both on debug and in production (i.e all the time even with silly bugs while coding)
+            Generally not a good idea */
+        //Fabric.with(this, new Crashlytics());
+        //Better [To run crashlytics when not debugging, i.e. only in the release version]:
+        Fabric.with(
+                this, new Crashlytics.Builder().core(
+                        new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build()
+                ).build()
+        );
+
 
         // Set the "activity_main.xml" layout as the current View
         setContentView(R.layout.activity_main);
@@ -152,7 +163,7 @@ public class MainActivity extends AppCompatActivity {
 
     /* Called when user clioks the "Force Crash" button*/
     public void forceCrash(View view) {
-        //Crashlytics.log(Log.ERROR, "MY_LOG", "This is a crash");
+        Crashlytics.log(Log.ERROR, LOG_UI + LOG_TAG, "This is a crash");
         throw new RuntimeException("This is a crash");
 
     }
