@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.widget.EditText;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.core.CrashlyticsCore;
+import com.google.firebase.crash.FirebaseCrash;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -139,9 +140,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         if(BuildConfig.DEBUG) {
             //Testing inbuilt logging
-            Log.d(LOG_UI + LOG_TAG, "Opening Linear Layout");
+            Log.d(LOG_UI + LOG_TAG, "Opening Linear Layout: Inbuilt logging output");
             //Testing Crashlytics logging
-            Crashlytics.log(Log.DEBUG, LOG_UI + LOG_TAG, "Opening Linear Layout");
+            Crashlytics.log(Log.DEBUG, LOG_UI + LOG_TAG, "Opening Linear Layout: Crashlytics Log output");
+            //Testing Firebase logging
+            FirebaseCrash.log("Opening Linear Layout: FirebaseCrash Log Output");
+            FirebaseCrash.logcat(Log.DEBUG, LOG_UI + LOG_TAG, "Opening Linear Layout: FirebaseCrash Log output");
         }
     }
 
@@ -158,6 +162,9 @@ public class MainActivity extends AppCompatActivity {
             Log.d(LOG_UI + LOG_TAG, "Opening Relative Layout");
             //Testing Crashlytics logging
             Crashlytics.log(Log.DEBUG, LOG_UI + LOG_TAG, "Opening Relative Layout");
+            //Testing Firebase logging
+            FirebaseCrash.log("Opening Relative Layout: FirebaseCrash Log Output");
+            FirebaseCrash.logcat(Log.DEBUG, LOG_UI + LOG_TAG, "Opening Relative Layout: FirebaseCrash Log output");
         }
     }
 
