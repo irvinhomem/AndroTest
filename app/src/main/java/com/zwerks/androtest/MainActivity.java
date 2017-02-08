@@ -159,9 +159,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         if(BuildConfig.DEBUG) {
             //Testing inbuilt logging
-            Log.d(LOG_UI + LOG_TAG, "Opening Relative Layout");
+            Log.d(LOG_UI + LOG_TAG, "Opening Relative Layout: Inbuilt logging output");
             //Testing Crashlytics logging
-            Crashlytics.log(Log.DEBUG, LOG_UI + LOG_TAG, "Opening Relative Layout");
+            Crashlytics.log(Log.DEBUG, LOG_UI + LOG_TAG, "Opening Relative Layout: Crashlytics Log output");
             //Testing Firebase logging
             FirebaseCrash.log("Opening Relative Layout: FirebaseCrash Log Output");
             FirebaseCrash.logcat(Log.DEBUG, LOG_UI + LOG_TAG, "Opening Relative Layout: FirebaseCrash Log output");
