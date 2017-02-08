@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         Fabric.with(
                 this, new Crashlytics.Builder().core(
                         new CrashlyticsCore.Builder().disabled(BuildConfig.DEBUG).build()
-                ).build()
+                ).build(), new Crashlytics()
         );
 
 
@@ -170,9 +170,15 @@ public class MainActivity extends AppCompatActivity {
 
     /* Called when user clioks the "Force Crash" button*/
     public void forceCrash(View view) {
-        Crashlytics.log(Log.ERROR, LOG_UI + LOG_TAG, "This is a crash");
-        throw new RuntimeException("This is a crash");
-
+        //Create the exception
+        RuntimeException ex =  new RuntimeException("This is the SIMULATED crash");
+        Log.e(LOG_UI + LOG_TAG, "This is the SIMULATED crash: Inbuilt logging output");
+        //Log the exception to Crashlytics logging and Firebase (it is automatically submitted to the online systens)
+        Crashlytics.log(Log.ERROR, LOG_UI + LOG_TAG, "This is the SIMULATED crash: Crashlytics Log output");
+        FirebaseCrash.logcat(Log.ERROR, LOG_UI + LOG_TAG, "This is the SIMULATED crash: FirebaseCrash Log Output");
+        //FirebaseCrash.report(ex);
+        // Fire the Exception
+        throw ex;
     }
 
 }
