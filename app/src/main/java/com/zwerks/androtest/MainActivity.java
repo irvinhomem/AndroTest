@@ -168,6 +168,27 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /** Called when the user clicks the "RelativeLayout button */
+    public void openCoordinatorLayout(View view){
+        //Do something in response to button click
+        Intent intent = new Intent(this, CoordinatorLayoutActivity.class);
+        //EditText editText = (EditText) findViewById(R.id.edit_message);
+        //String message = editText.getText().toString();
+        //intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+        if(BuildConfig.DEBUG) {
+            //Testing inbuilt logging
+            Log.d(LOG_UI + LOG_TAG, "Opening Coordinator Layout: Inbuilt logging output");
+            /*
+            //Testing Crashlytics logging
+            Crashlytics.log(Log.DEBUG, LOG_UI + LOG_TAG, "Opening Relative Layout: Crashlytics Log output");
+            //Testing Firebase logging
+            FirebaseCrash.log("Opening Relative Layout: FirebaseCrash Log Output");
+            FirebaseCrash.logcat(Log.DEBUG, LOG_UI + LOG_TAG, "Opening Relative Layout: FirebaseCrash Log output");
+            */
+        }
+    }
+
     /* Called when user clioks the "Force Crash" button*/
     public void forceCrash(View view) {
         //Create the exception

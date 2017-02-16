@@ -50,11 +50,18 @@
             android:layout_alignParentLeft="true"
             android:onClick="openLinearLayout"/>
         <Button
+            android:id="@+id/btn_openRelativeLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_OpenRelativeLayout"
             android:layout_toRightOf="@id/btn_LinearLayout"
             android:onClick="openRelativeLayout"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_OpenCoordinatorLayout"
+            android:layout_below="@id/btn_LinearLayout"
+            android:onClick="openCoordinatorLayout"/>
         <Button
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"

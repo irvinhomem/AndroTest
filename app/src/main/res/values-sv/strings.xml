@@ -16,4 +16,5 @@
     <string name="to">To</string>
     <string name="message">Message</string>
     <string name="reminder_txt">Reminder name</string>
+    <string name="btn_OpenCoordinatorLayout">Coordinator Layout</string>
 </resources>
